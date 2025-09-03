@@ -1,4 +1,14 @@
-const palindromes = function () {
+const palindromes = function (word) {
+    const cleanWord = word.replace(/\W/g, "").toLowerCase();
+    const half = Math.floor(cleanWord.length/2);
+    let j = cleanWord.length -1;
+    for(let i = 0; i <= half; i++){
+        if(cleanWord[i] !== cleanWord[j]){
+            return false;
+        }
+        j--;
+    }
+    return true;
 
 };
 
